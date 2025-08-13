@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rony Fernandes - Trusted Advisor for Insurance, Finance & Real Estate</title>
+    <meta name="description" content="27+ years of trusted advice in Insurance, Investments & Real Estate. Licensed LIC agent since 1997.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen will be added by JavaScript -->
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Rony Fernandes</h2>
+                <span>Licensed Advisor</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero parallax-container">
+        <div class="hero-container">
+            <!-- Enhanced hero content with parallax support -->
+            <div class="hero-content parallax-front">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">Rony Fernandes</span>
+                        <span class="title-subtitle">27+ Years of Trusted Advice</span>
+                    </h1>
+                    <p class="hero-description">
+                        Your Partner in Insurance, Investments & Real Estate
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="openQuoteModal()">
+                            <i class="fas fa-calculator"></i>
+                            Get a Quote
+                        </button>
+                        <button class="btn btn-secondary" onclick="openChat()">
+                            <i class="fab fa-whatsapp"></i>
+                            Chat Now
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">27+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Trusted Service</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image parallax-mid">
+                    <div class="image-container">
+                        <img src="/placeholder.svg?height=500&width=400" alt="Rony Fernandes - Professional Advisor">
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Enhanced partners section with parallax -->
+        <div class="hero-partners parallax-front">
+            <div class="partners-container">
+                <p class="partners-text">Trusted Partner of Leading Brands</p>
+                <div class="partners-logos">
+                    <img src="/placeholder.svg?height=60&width=120" alt="LIC">
+                    <img src="/placeholder.svg?height=60&width=120" alt="HDFC ERGO">
+                    <img src="/placeholder.svg?height=60&width=120" alt="National Insurance">
+                    <img src="/placeholder.svg?height=60&width=120" alt="Star Health">
+                    <img src="/placeholder.svg?height=60&width=120" alt="SBI">
+                    <img src="/placeholder.svg?height=60&width=120" alt="Axis Bank">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview parallax-container">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comprehensive Financial Solutions</h2>
+                <p>Since 1997, helping individuals, families, and businesses secure their future</p>
+            </div>
+            <!-- Enhanced service cards with parallax classes -->
+            <div class="services-grid">
+                <div class="service-card parallax-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Insurance Solutions</h3>
+                    <p>Life, Health, Motor, General, Fire & Theft, Building Insurance</p>
+                    <ul class="service-features">
+                        <li>LIC Life Insurance Plans</li>
+                        <li>Health Insurance Coverage</li>
+                        <li>Motor & Vehicle Insurance</li>
+                        <li>Property Protection</li>
+                    </ul>
+                </div>
+                <div class="service-card parallax-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Investment Planning</h3>
+                    <p>Mutual Funds, SIP Planning & Portfolio Management</p>
+                    <ul class="service-features">
+                        <li>LIC Mutual Funds</li>
+                        <li>SBI & HDFC Funds</li>
+                        <li>Axis Bank Investments</li>
+                        <li>Portfolio Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card parallax-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Real Estate Advisory</h3>
+                    <p>Buy, Sell, and Property Investment Guidance</p>
+                    <ul class="service-features">
+                        <li>Property Buying Assistance</li>
+                        <li>Selling Support</li>
+                        <li>Investment Properties</li>
+                        <li>Market Analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about parallax-container">
+        <div class="container">
+            <!-- Enhanced about content with parallax support -->
+            <div class="about-content parallax-front">
+                <div class="about-text">
+                    <div class="section-header">
+                        <h2>About Rony Fernandes</h2>
+                        <p>Licensed Branded Agent Since 1997</p>
+                    </div>
+                    <div class="about-description">
+                        <p>With over 27 years of experience in the financial services industry, I have dedicated my career to helping individuals and businesses make informed decisions about their financial future.</p>
+                        <p>As a licensed LIC agent and IRDA approved advisor, I specialize in providing comprehensive insurance solutions, investment planning, and real estate advisory services.</p>
+                    </div>
+                    <div class="credentials">
+                        <h3>Credentials & Certifications</h3>
+                        <ul>
+                            <li><i class="fas fa-certificate"></i> LIC Certified Agent</li>
+                            <li><i class="fas fa-certificate"></i> IRDA Approved Advisor</li>
+                            <li><i class="fas fa-certificate"></i> Mutual Fund Distributor</li>
+                            <li><i class="fas fa-certificate"></i> Real Estate Consultant</li>
+                        </ul>
+                    </div>
+                    <div class="mission">
+                        <h3>Mission & Vision</h3>
+                        <p>To provide transparent, reliable, and personalized financial solutions that help my clients achieve their goals and secure their future with confidence.</p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="/placeholder.svg?height=600&width=500" alt="Rony Fernandes in Office">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services -->
+    <section id="services" class="services parallax-container">
+        <div class="services-background parallax-bg"></div>
+        <div class="container parallax-front">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive financial solutions tailored to your needs</p>
+            </div>
+            <div class="services-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="insurance">Insurance Services</button>
+                    <button class="tab-btn" data-tab="investment">Investment Planning</button>
+                    <button class="tab-btn" data-tab="realestate">Real Estate Advisory</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="insurance">
+                        <div class="service-details">
+                            <div class="service-item">
+                                <h3><i class="fas fa-heart"></i> Life Insurance (LIC)</h3>
+                                <p>Term plans, endowment policies, and retirement planning solutions</p>
+                            </div>
+                            <div class="service-item">
+                                <h3><i class="fas fa-user-md"></i> Health Insurance</h3>
+                                <p>Comprehensive coverage from Star Health, HDFC ERGO, National Insurance</p>
+                            </div>
+                            <div class="service-item">
+                                <h3><i class="fas fa-car"></i> Motor Insurance</h3>
+                                <p>Car, bike, and commercial vehicle coverage with quick claim support</p>
+                            </div>
+                            <div class="service-item">
+                                <h3><i class="fas fa-fire"></i> Fire & Theft Insurance</h3>
+                                <p>Property and asset protection against fire, theft, and natural disasters</p>
+                            </div>
+                            <div class="service-item">
+                                <h3><i class="fas fa-building"></i> Building Insurance</h3>
+                                <p>Residential and commercial property insurance solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="investment">
+                        <div class="service-details">
+                            <div class="service-item">
+                                <h3><i class="fas fa-chart-pie"></i> Mutual Funds</h3>
+                                <p>LIC, SBI, HDFC, and Axis Bank mutual fund investments</p>
+                            </div>
+                            <div class="service-item">
+                                <h3><i class="fas fa-calendar-alt"></i> SIP Planning</h3>
+                                <p>Systematic Investment Plans for long-term wealth creation</p>
+                            </div>
+                            <div class="service-item">
+                                <h3><i class="fas fa-briefcase"></i> Portfolio Management</h3>
+                                <p>Professional portfolio optimization and risk management</p>
+                            </div>
+                            <div class="service-item">
+                                <h3><i class="fas fa-piggy-bank"></i> Retirement Planning</h3>
+                                <p>Secure your golden years with strategic retirement investments</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="realestate">
+                        <div class="service-details">
+                            <div class="service-item">
+                                <h3><i class="fas fa-search"></i> Property Buying</h3>
+                                <p>Expert assistance in finding and purchasing the right property</p>
+                            </div>
+                            <div class="service-item">
+                                <h3><i class="fas fa-handshake"></i> Property Selling</h3>
+                                <p>Professional support to sell your property at the best price</p>
+                            </div>
+                            <div class="service-item">
+                                <h3><i class="fas fa-chart-bar"></i> Investment Properties</h3>
+                                <p>Guidance on rental and commercial property investments</p>
+                            </div>
+                            <div class="service-item">
+                                <h3><i class="fas fa-analytics"></i> Market Analysis</h3>
+                                <p>In-depth market research and property valuation services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials parallax-container">
+        <div class="container parallax-front">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Real experiences from satisfied customers</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Rony helped me choose the perfect life insurance policy. His expertise and honest advice made the process so easy. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Client">
+                            <div>
+                                <h4>Priya Sharma</h4>
+                                <span>Software Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Excellent service for mutual fund investments. Rony's guidance helped me build a strong portfolio. Very professional and trustworthy."</p>
+                        <div class="testimonial-author">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Client">
+                            <div>
+                                <h4>Rajesh Kumar</h4>
+                                <span>Business Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Rony assisted us in buying our dream home. His real estate expertise and market knowledge were invaluable. Thank you!"</p>
+                        <div class="testimonial-author">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Client">
+                            <div>
+                                <h4>Amit & Neha Patel</h4>
+                                <span>Young Professionals</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button class="nav-dot active" data-slide="0"></button>
+                <button class="nav-dot" data-slide="1"></button>
+                <button class="nav-dot" data-slide="2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact parallax-container">
+        <div class="container parallax-front">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to secure your financial future? Let's talk!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 98765 43210</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>rony.fernandes@email.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Office</h3>
+                            <p>123 Business District<br>Mumbai, Maharashtra 400001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Hours</h3>
+                            <p>Mon - Sat: 9:00 AM - 6:00 PM<br>Sunday: By Appointment</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="">Select Service</option>
+                            <option value="life-insurance">Life Insurance</option>
+                            <option value="health-insurance">Health Insurance</option>
+                            <option value="motor-insurance">Motor Insurance</option>
+                            <option value="mutual-funds">Mutual Funds</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Rony Fernandes</h3>
+                    <p>Licensed Financial Advisor</p>
+                    <p>Serving clients since 1997 with integrity and expertise.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Life Insurance</a></li>
+                        <li><a href="#services">Health Insurance</a></li>
+                        <li><a href="#services">Motor Insurance</a></li>
+                        <li><a href="#services">Mutual Funds</a></li>
+                        <li><a href="#services">Real Estate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> rony.fernandes@email.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <!-- Fixed partner logos with proper LIC branding and better layout -->
+                <div class="footer-partners">
+                    <div class="partner-logo">
+                        <img src="/placeholder.svg?height=40&width=80&text=LIC" alt="Life Insurance Corporation of India">
+                        <span>LIC</span>
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/placeholder.svg?height=40&width=80&text=HDFC" alt="HDFC ERGO">
+                        <span>HDFC ERGO</span>
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/placeholder.svg?height=40&width=80&text=SBI" alt="State Bank of India">
+                        <span>SBI</span>
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/placeholder.svg?height=40&width=80&text=AXIS" alt="Axis Bank">
+                        <span>AXIS</span>
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/placeholder.svg?height=40&width=80&text=STAR" alt="Star Health Insurance">
+                        <span>STAR HEALTH</span>
+                    </div>
+                    <div class="partner-logo">
+                        <img src="/placeholder.svg?height=40&width=80&text=NATIONAL" alt="National Insurance">
+                        <span>NATIONAL</span>
+                    </div>
+                </div>
+                <p>&copy; 2025 Rony Fernandes. All rights reserved. | Licensed Financial Advisor</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Get Your Quote</h2>
+            <form id="quoteForm">
+                <div class="form-group">
+                    <select name="quoteType" required>
+                        <option value="">Select Insurance Type</option>
+                        <option value="life">Life Insurance</option>
+                        <option value="health">Health Insurance</option>
+                        <option value="motor">Motor Insurance</option>
+                        <option value="property">Property Insurance</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="quoteName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="quoteEmail" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="quotePhone" placeholder="Your Phone" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="quoteAge" placeholder="Your Age" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Get Quote</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float" onclick="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- Chatbot -->
+    <div id="chatbot" class="chatbot">
+        <div class="chatbot-header">
+            <h3>Chat with Rony</h3>
+            <button class="close-chat" onclick="closeChat()">&times;</button>
+        </div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="message bot-message">
+                <p>Hello! I'm here to help you with insurance, investments, and real estate queries. How can I assist you today?</p>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
