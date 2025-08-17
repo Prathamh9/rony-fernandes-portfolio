@@ -1,5 +1,7 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
-import { Phone, MessageCircle, Calendar } from "lucide-react"
+import { Phone, MessageCircle } from "lucide-react"
 
 export default function ServicesCTA() {
   const stats = [
@@ -8,6 +10,17 @@ export default function ServicesCTA() {
     { number: "24/7", label: "Claim Support" },
     { number: "1:1", label: "Personalized Guidance" },
   ]
+
+  // Copy phone number function
+  const copyPhoneNumber = () => {
+    navigator.clipboard.writeText("+919876543210")
+    alert("Phone number copied: +91 98765 43210")
+  }
+
+  // Open WhatsApp function
+  const openWhatsApp = () => {
+    window.open("https://wa.me/919876543210", "_blank")
+  }
 
   return (
     <section className="py-20 bg-primary/5">
@@ -35,25 +48,24 @@ export default function ServicesCTA() {
             Ready to Secure Your Financial Future?
           </h3>
           <p className="professional-body text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Get personalized advice from a trusted advisor with 27+ years of experience. Schedule your free consultation
-            today and take the first step towards financial security.
+            Get personalized advice from a trusted advisor with 27+ years of experience. Take the first step towards
+            financial security today.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
+            <Button
+              onClick={copyPhoneNumber}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3"
+            >
               <Phone className="w-4 h-4 mr-2" />
               Call Now: +91 98765 43210
             </Button>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3">
+            <Button
+              onClick={openWhatsApp}
+              className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3"
+            >
               <MessageCircle className="w-4 h-4 mr-2" />
               WhatsApp Chat
-            </Button>
-            <Button
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 bg-transparent"
-            >
-              <Calendar className="w-4 h-4 mr-2" />
-              Schedule Meeting
             </Button>
           </div>
         </div>

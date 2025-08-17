@@ -1,6 +1,5 @@
 import { TrendingUp, PieChart, Target, Calculator } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 
 export default function InvestmentServices() {
   const investmentServices = [
@@ -57,7 +56,10 @@ export default function InvestmentServices() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {investmentServices.map((service, index) => (
-            <Card key={index} className="card-hover bg-card border-border group">
+            <Card
+              key={index}
+              className="card-hover bg-card border-border group h-[430px] flex flex-col"
+            >
               <CardHeader className="pb-4">
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center justify-center w-12 h-12 bg-accent/10 rounded-full group-hover:bg-accent/20 transition-colors">
@@ -68,11 +70,13 @@ export default function InvestmentServices() {
                   </CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 flex-1 flex flex-col">
                 <p className="professional-body text-muted-foreground">{service.description}</p>
 
                 <div className="space-y-2">
-                  <h4 className="professional-heading text-sm font-semibold text-card-foreground">Services Include:</h4>
+                  <h4 className="professional-heading text-sm font-semibold text-card-foreground">
+                    Services Include:
+                  </h4>
                   <ul className="grid grid-cols-2 gap-1">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-sm text-muted-foreground">
@@ -83,7 +87,7 @@ export default function InvestmentServices() {
                   </ul>
                 </div>
 
-                <div className="pt-2 border-t border-border">
+                <div className="pt-2 border-t border-border mt-auto">
                   <p className="text-xs text-muted-foreground mb-2">Partners:</p>
                   <div className="flex flex-wrap gap-1">
                     {service.partners.map((partner, idx) => (
@@ -96,8 +100,7 @@ export default function InvestmentServices() {
                     ))}
                   </div>
                 </div>
-
-                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Start Investing</Button>
+                {/* Button removed */}
               </CardContent>
             </Card>
           ))}

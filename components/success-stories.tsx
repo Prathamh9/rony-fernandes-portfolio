@@ -99,11 +99,18 @@ export default function SuccessStories() {
           ))}
         </div>
 
+        {/* Button linking to LinkedIn in new tab */}
         <div className="text-center mt-12">
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
-            Share Your Success Story
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Button>
+          <a
+            href="https://in.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
+              Share Your Success Story
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </a>
         </div>
       </div>
     </section>

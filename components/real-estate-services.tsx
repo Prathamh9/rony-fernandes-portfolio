@@ -79,13 +79,6 @@ export default function RealEstateServices() {
                     ))}
                   </ul>
                 </div>
-
-                <Button
-                  variant="outline"
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                >
-                  Get Consultation
-                </Button>
               </CardContent>
             </Card>
           ))}
@@ -115,17 +108,7 @@ export default function RealEstateServices() {
                 Whether you're buying your first home or expanding your investment portfolio, I'm here to guide you
                 through every step of the process.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Schedule Consultation
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent"
-                >
-                  View Properties
-                </Button>
-              </div>
+              
             </div>
           </div>
         </div>

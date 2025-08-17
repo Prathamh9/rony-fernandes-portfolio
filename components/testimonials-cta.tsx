@@ -1,7 +1,23 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { MessageCircle, Phone, Star } from "lucide-react"
 
 export default function TestimonialsCTA() {
+  const phoneNumber = "+919876543210" // keep full intl format for WhatsApp
+
+  // Copy phone number to clipboard
+  const copyPhoneNumber = () => {
+    navigator.clipboard.writeText(phoneNumber)
+    alert("Phone number copied: " + phoneNumber)
+  }
+
+  // Open WhatsApp in new tab
+  const openWhatsApp = () => {
+    const url = `https://wa.me/${phoneNumber}`
+    window.open(url, "_blank", "noopener,noreferrer")
+  }
+
   return (
     <section className="py-20 bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -23,11 +39,20 @@ export default function TestimonialsCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
+            {/* Call Button */}
+            <Button
+              onClick={copyPhoneNumber}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3"
+            >
               <Phone className="w-4 h-4 mr-2" />
               Call Now: +91 98765 43210
             </Button>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3">
+
+            {/* WhatsApp Button */}
+            <Button
+              onClick={openWhatsApp}
+              className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3"
+            >
               <MessageCircle className="w-4 h-4 mr-2" />
               WhatsApp Chat
             </Button>

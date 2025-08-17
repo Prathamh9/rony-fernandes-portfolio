@@ -2,11 +2,12 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Phone, MessageCircle } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { usePathname } from "next/navigation"
+import { Menu, X } from "lucide-react"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname() // Get the current path
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -17,7 +18,7 @@ export default function Navigation() {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-border">
+    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-border rounded-b-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -32,29 +33,16 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="professional-heading text-foreground hover:text-primary transition-colors duration-200 font-medium text-sm uppercase tracking-wide"
+                className={`
+                  professional-heading text-foreground hover:text-primary transition-colors duration-200 font-medium text-sm uppercase tracking-wide
+                  ${pathname === item.href ? "text-yellow-600 border-b-2 border-yellow-600" : "hover:text-yellow-600"}
+                `}
               >
                 {item.name}
               </Link>
             ))}
           </nav>
-
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Call Now
-            </Button>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium" size="sm">
-              <MessageCircle className="w-4 h-4 mr-2" />
-              Get Quote
-            </Button>
-          </div>
-
+          
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
@@ -72,25 +60,15 @@ export default function Navigation() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="professional-heading text-foreground hover:text-primary transition-colors duration-200 font-medium py-2 uppercase tracking-wide"
+                  className={`
+                    professional-heading text-foreground hover:text-primary transition-colors duration-200 font-medium py-2 uppercase tracking-wide
+                    ${pathname === item.href ? "text-yellow-600 border-l-4 border-yellow-600 pl-2" : "hover:text-yellow-600"}
+                  `}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-3 pt-4 border-t border-border">
-                <Button
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full bg-transparent"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Call Now
-                </Button>
-                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium w-full">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Get Quote
-                </Button>
-              </div>
             </nav>
           </div>
         )}

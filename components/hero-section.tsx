@@ -1,8 +1,36 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { MessageCircle, Phone } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function HeroSection() {
+  const [copyStatus, setCopyStatus] = useState('')
+  const phoneNumber = "919876543210"; // Updated phone number from the WhatsApp link
+
+  // Function to copy the phone number to the clipboard
+  const copyPhoneNumber = async () => {
+    try {
+      await navigator.clipboard.writeText(phoneNumber);
+      setCopyStatus('Copied!');
+    } catch (err) {
+      // Fallback for older browsers or restricted environments
+      const tempInput = document.createElement("input");
+      document.body.appendChild(tempInput);
+      tempInput.value = phoneNumber;
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      setCopyStatus('Copied!');
+    }
+    // Hide the message after a delay
+    setTimeout(() => {
+      setCopyStatus('');
+    }, 2000);
+  };
+
   return (
     <section id="home" className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,19 +50,35 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full text-lg">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Chat Now
-              </Button>
+              {/* "Chat Now" button with WhatsApp link */}
+              <a
+                href="https://api.whatsapp.com/send/?phone=919876543210&text&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full text-lg">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Chat Now
+                </Button>
+              </a>
+
+              {/* "Contact Me" button with clipboard functionality */}
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-gray-300 hover:border-teal-600 px-8 py-3 rounded-full text-lg bg-transparent"
+                className="border-2 border-gray-300 hover:border-teal-600 px-8 py-3 rounded-full text-lg bg-transparent relative"
+                onClick={copyPhoneNumber}
               >
                 <Phone className="mr-2 h-5 w-5" />
-                Get a Quote
+                Contact Me
+                {copyStatus && (
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 py-1 bg-gray-800 text-white text-sm rounded-md shadow-lg transition-all duration-300">
+                    {copyStatus}
+                  </div>
+                )}
               </Button>
             </div>
+
 
             {/* Partner Logos */}
             <div className="pt-8">

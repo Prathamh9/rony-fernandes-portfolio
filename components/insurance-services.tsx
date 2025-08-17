@@ -1,6 +1,5 @@
 import { Shield, Heart, Car, Briefcase, Flame, Building } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 
 export default function InsuranceServices() {
   const insuranceServices = [
@@ -65,7 +64,10 @@ export default function InsuranceServices() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {insuranceServices.map((service, index) => (
-            <Card key={index} className="card-hover bg-card border-border group">
+            <Card
+              key={index}
+              className="card-hover bg-card border-border group h-full min-h-[430px] max-h-[430px] flex flex-col"
+            >
               <CardHeader className="text-center pb-4">
                 <div className="flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4 mx-auto group-hover:bg-accent/20 transition-colors">
                   <service.icon className="w-8 h-8 text-accent" />
@@ -74,7 +76,7 @@ export default function InsuranceServices() {
                   {service.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 flex flex-col flex-1">
                 <p className="professional-body text-sm text-muted-foreground text-center">{service.description}</p>
 
                 <div className="space-y-2">
@@ -89,7 +91,7 @@ export default function InsuranceServices() {
                   </ul>
                 </div>
 
-                <div className="pt-2 border-t border-border">
+                <div className="pt-2 border-t border-border mt-auto">
                   <p className="text-xs text-muted-foreground mb-2">Partners:</p>
                   <div className="flex flex-wrap gap-1">
                     {service.partners.map((partner, idx) => (
@@ -99,13 +101,7 @@ export default function InsuranceServices() {
                     ))}
                   </div>
                 </div>
-
-                <Button
-                  variant="outline"
-                  className="w-full mt-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                >
-                  Get Quote
-                </Button>
+                {/* "Start Investing" button removed */}
               </CardContent>
             </Card>
           ))}
