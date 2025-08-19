@@ -15,6 +15,17 @@ export default function Header() {
     { name: "Contact", href: "#contact" },
   ]
 
+  // Smooth scroll handler
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const targetId = href.replace("#", "")
+    const target = document.getElementById(targetId)
+    if (target) {
+      e.preventDefault()
+      target.scrollIntoView({ behavior: "smooth" })
+      setIsMenuOpen(false)
+    }
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,6 +40,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium"
+                onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.name}
               </a>
@@ -55,7 +67,7 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, item.href)}
                 >
                   {item.name}
                 </a>

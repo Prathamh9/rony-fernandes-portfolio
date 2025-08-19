@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import Link from "next/link"
 
 export default function Footer() {
   const quickLinks = [
@@ -92,9 +93,14 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-gray-300 hover:text-teal-400 transition-colors">
+                  <Link
+                    href={link.href}
+                    scroll={true}
+                    className="text-gray-300 hover:text-teal-400 transition-colors"
+                    prefetch={false}
+                  >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

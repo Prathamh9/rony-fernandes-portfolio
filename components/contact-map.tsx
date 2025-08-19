@@ -13,7 +13,7 @@ export default function ContactMap() {
             has ample parking facilities.
           </p>
         </div>
-
+      
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Map */}
           <div className="lg:col-span-2">
@@ -27,13 +27,20 @@ export default function ContactMap() {
                     <p className="professional-body text-sm mt-2">Near Metro Station & Major Bus Routes</p>
                   </div>
 
-                  {/* Overlay with directions button */}
-                  <div className="absolute bottom-4 right-4">
+                 {/* Overlay with directions button */}
+                <div className="absolute bottom-4 right-4">
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=123+Business+District,+Mumbai,+Maharashtra+400001"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                       <Navigation className="w-4 h-4 mr-2" />
                       Get Directions
                     </Button>
-                  </div>
+                  </a>
+                </div>
+
                 </div>
               </CardContent>
             </Card>

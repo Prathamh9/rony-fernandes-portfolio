@@ -1,10 +1,27 @@
-import { Send, User, Phone, Mail, MessageSquare } from "lucide-react"
+"use client"
+
+import { useState } from "react"
+import { Send, User, Phone, Mail, MessageSquare, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { useToast } from "@/components/ui/use-toast"
 
 export default function ContactForm() {
+  const { toast } = useToast()
+  const [submitted, setSubmitted] = useState(false)
+
+  // Form state
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+    coverage: "",
+    message: "",
+  })
+
   const services = [
     "Life Insurance",
     "Health Insurance",
@@ -18,6 +35,43 @@ export default function ContactForm() {
     "Property Investment",
     "General Consultation",
   ]
+
+  // Validation function
+  const isFormValid = () => {
+    const { name, phone, email, service, message } = formData
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return (
+      name.trim() !== "" &&
+      phone.trim() !== "" &&
+      emailRegex.test(email) &&
+      service.trim() !== "" &&
+      message.trim() !== ""
+    )
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = () => {
+    if (!isFormValid()) {
+      toast({
+        title: "Form Incomplete ❌",
+        description: "Please fill all required fields correctly before submitting.",
+        variant: "destructive",
+      })
+      return
+    }
+
+    setSubmitted(true)
+
+    toast({
+      title: "Message Submitted ✅",
+      description: "Thank you for reaching out! I'll get back to you within 24 hours.",
+    })
+
+    setTimeout(() => setSubmitted(false), 3000)
+  }
 
   return (
     <div className="lg:col-span-2">
@@ -34,43 +88,54 @@ export default function ContactForm() {
         <CardContent className="p-8 space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label className="professional-heading text-sm font-medium text-foreground flex items-center">
+              <label className="professional-heading text-sm font-medium flex items-center">
                 <User className="w-4 h-4 mr-2 text-primary" />
                 Full Name *
               </label>
               <Input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Enter your full name"
-                className="border-primary/20 focus:border-primary focus:ring-primary/20"
               />
             </div>
             <div className="space-y-2">
-              <label className="professional-heading text-sm font-medium text-foreground flex items-center">
+              <label className="professional-heading text-sm font-medium flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-primary" />
                 Phone Number *
               </label>
               <Input
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 placeholder="Enter your phone number"
-                className="border-primary/20 focus:border-primary focus:ring-primary/20"
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <label className="professional-heading text-sm font-medium text-foreground flex items-center">
+            <label className="professional-heading text-sm font-medium flex items-center">
               <Mail className="w-4 h-4 mr-2 text-primary" />
               Email Address *
             </label>
             <Input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Enter your email address"
-              className="border-primary/20 focus:border-primary focus:ring-primary/20"
             />
           </div>
 
           <div className="space-y-2">
-            <label className="professional-heading text-sm font-medium text-foreground">Service Interest</label>
-            <select className="w-full p-3 border border-primary/20 rounded-md focus:ring-2 focus:ring-primary/20 focus:border-primary bg-background professional-body">
-              <option>Select a service you're interested in</option>
+            <label className="professional-heading text-sm font-medium">Service Interest *</label>
+            <select
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              className="w-full p-3 border border-primary/20 rounded-md"
+            >
+              <option value="">Select a service you're interested in</option>
               {services.map((service, index) => (
                 <option key={index} value={service}>
                   {service}
@@ -80,47 +145,48 @@ export default function ContactForm() {
           </div>
 
           <div className="space-y-2">
-            <label className="professional-heading text-sm font-medium text-foreground">
-              Current Coverage (Optional)
-            </label>
+            <label className="professional-heading text-sm font-medium">Current Coverage (Optional)</label>
             <Input
+              name="coverage"
+              value={formData.coverage}
+              onChange={handleChange}
               placeholder="Do you have existing insurance or investments?"
-              className="border-primary/20 focus:border-primary focus:ring-primary/20"
             />
           </div>
 
           <div className="space-y-2">
-            <label className="professional-heading text-sm font-medium text-foreground">Message *</label>
+            <label className="professional-heading text-sm font-medium">Message *</label>
             <Textarea
-              placeholder="Please describe your requirements, questions, or how I can help you achieve your financial goals..."
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Please describe your requirements..."
               rows={6}
-              className="border-primary/20 focus:border-primary focus:ring-primary/20 professional-body"
             />
           </div>
 
-          <div className="bg-accent/5 rounded-lg p-4">
-            <h4 className="professional-heading font-semibold text-primary mb-2">What to Expect Next:</h4>
-            <ul className="professional-body text-sm text-muted-foreground space-y-1">
-              <li>• Personal response within 24 hours</li>
-              <li>• Free initial consultation (30 minutes)</li>
-              <li>• Customized recommendations based on your needs</li>
-              <li>• No obligation - just expert advice</li>
-            </ul>
-          </div>
-
-          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-4 text-lg">
-            <Send className="w-5 h-5 mr-2" />
-            Send Message
+          {/* Submit Button */}
+          <Button
+            onClick={handleSubmit}
+            disabled={!isFormValid() || submitted}
+            className={`w-full sm:w-auto py-4 px-6 text-lg flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed
+    ${submitted ? "bg-green-600 text-white" : "bg-primary hover:bg-primary/90 text-primary-foreground"}`}
+          >
+            {submitted ? (
+              <>
+                <CheckCircle className="w-5 h-5 mr-2 animate-bounce" />
+                <span className="font-semibold">Message Submitted</span>
+                <span className="ml-2 text-sm bg-green-100 text-green-700 px-2 py-1 rounded shadow animate-fade-in">
+                  Thank you!
+                </span>
+              </>
+            ) : (
+              <>
+                <Send className="w-5 h-5 mr-2" />
+                Send Message
+              </>
+            )}
           </Button>
-
-          <div className="text-center pt-4 border-t border-border">
-            <p className="professional-body text-sm text-muted-foreground">
-              Your information is secure and will never be shared with third parties.
-            </p>
-            <p className="professional-body text-sm text-muted-foreground mt-1">
-              For immediate assistance, call <strong className="text-primary">+91 98765 43210</strong>
-            </p>
-          </div>
         </CardContent>
       </Card>
     </div>

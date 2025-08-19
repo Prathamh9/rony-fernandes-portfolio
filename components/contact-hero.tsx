@@ -13,24 +13,41 @@ export default function ContactHero() {
           investment, and real estate needs. Your success is my priority.
         </p>
 
+        {/* Contact Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
-            <Phone className="w-4 h-4 mr-2" />
-            Call: +91 98765 43210
-          </Button>
-          <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3">
-            <MessageCircle className="w-4 h-4 mr-2" />
-            WhatsApp Chat
-          </Button>
-          <Button
-            variant="outline"
-            className="border-primary text-primary hover:bg-primary/10 px-8 py-3 bg-transparent"
+          {/* Phone Button */}
+          <a href="tel:+919876543210">
+            <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
+              <Phone className="w-4 h-4 mr-2" />
+              Call: +91 98765 43210
+            </Button>
+          </a>
+
+          {/* WhatsApp Button */}
+          <a
+            href="https://api.whatsapp.com/send/?phone=919876543210&text=Hi%2C%20I%27m%20interested%20in%20your%20services!"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Mail className="w-4 h-4 mr-2" />
-            Email Me
-          </Button>
+            <Button className="w-full sm:w-auto bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full">
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Chat Now
+            </Button>
+          </a>
+
+          {/* Email Button */}
+          <a href="mailto:rony@example.com">
+            <Button
+              className="w-full sm:w-auto border-primary text-primary hover:bg-primary/10 px-8 py-3 bg-transparent"
+              variant="outline"
+            >
+              <Mail className="w-4 h-4 mr-2" />
+              Email Me
+            </Button>
+          </a>
         </div>
 
+        {/* Info Box */}
         <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-6 inline-block">
           <p className="professional-body text-sm text-muted-foreground mb-2">
             <strong className="text-primary">Response Time:</strong> Within 2 hours during business hours

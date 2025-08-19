@@ -98,10 +98,20 @@ export default function ContactInfo() {
           <p className="professional-body text-sm text-muted-foreground mb-4">
             Get immediate answers to your insurance and investment questions. Available during business hours.
           </p>
-          <Button className="bg-green-600 hover:bg-green-700 text-white w-full">
-            <MessageCircle className="w-4 h-4 mr-2" />
-            Start WhatsApp Chat
+          <Button
+            className="bg-green-600 hover:bg-green-700 text-white w-full"
+            asChild
+          >
+            <a
+              href="https://wa.me/919876543210?text=Hello%20Rony%2C%20I%20have%20a%20question%20about%20your%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="w-4 h-4 mr-2" />
+              Start WhatsApp Chat
+            </a>
           </Button>
+
         </CardContent>
       </Card>
 
